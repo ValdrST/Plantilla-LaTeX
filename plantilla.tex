@@ -12,7 +12,7 @@
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-
+% Definicio de estilo para el codigo fuente que se cita
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
@@ -32,8 +32,11 @@
     tabsize=2,
 }
 \lstset{style=mystyle}
+% Traduccion de etiqueta de codigo fuente
 \renewcommand{\lstlistingname}{Código}
+% Traduccion de etiqueta de tabla
 \renewcommand\spanishtablename{Tabla}
+% Path de las imagenes que usara el documento
 \graphicspath{ {images/} }
 
 \ifCLASSINFOpdf
@@ -43,20 +46,20 @@
 \fi
 
 
-
+% Inicio del contenido del documento
 \begin{document}
-
+% Titulo del documento
 \title{Manual para generar documentación}
-
+% Autor o autores del documento
 \author{Vicente Romero Andrade}
-
+%Cabecera del documento
 \markboth{Unidad de Servicios de Cómputo Administrativo, Marzo~2021}
 {Shell \MakeLowercase{\textit{et al.}}: }
-
+% Crear titulo
 \maketitle
-
+% Seleccionar lenguaje para etiquetas
 \selectlanguage{spanish}
-% Este es el que escribira el indice
+% Crear tabla de contenidos
 \tableofcontents
 %Aqui incia el resumen
 \begin{abstract}
@@ -85,9 +88,9 @@ Se tienen que instalar los siguientes paquetes.
 \end{itemize}
 
 \section{Procedimiento}
+%Parrafo
 Soy un texto plano normal que va a generar un parrafo. 
 \textbf{Soy un texto en negritas}
-\\ 
 \textit{Soy un texto en cursiva} y estoy en otro parrafo. \underline{Soy un texto subrayado}
 \underline{\textit{\textbf{Soy un texto en cursiva, negritas y subrayado}}}  
 
@@ -116,9 +119,11 @@ Aqui se describiran las listas orednadas
 \subsection{Soy una subseccion que describira como citar codigo}
 \subsubsection{Traer codigo fuente externo}
 El codigo fuente puede venir de un archivo
+% Citar codigo externo
 \lstinputlisting[language=Python,caption=Ejemplo python,label={lst:codigo_python}]{codigo_fuente_python.py}
 \subsubsection{Traer codigo fuente en el mismo documento}
 o puede escribirse en el mismo documento
+% Citar codigo en documento
 \begin{lstlisting}[language=bash, caption=Bomba fork,label={lst:bomba_fork}]
 #!/bin/bash
 bomba(){
@@ -144,7 +149,8 @@ Esta imagen no lleva texto por lo que no se indexa en tabla de figuras
 \subsection{Tablas}
 \subsubsection{Tablas con texto indexables}
 Estas tablas se pueden indexar sin problemas
-\begin{table}[h!]
+%Tabla citable
+\begin{table}[H]
     \centering
     \begin{tabular}{||c c c c||} 
      \hline
@@ -163,7 +169,6 @@ Estas tablas se pueden indexar sin problemas
 \subsubsection{Tablas simples}
 estas tablas son la forma simple, se pueden acomodar al texto,
 o al parrafo dado segun se acomoden y segun la longitud del texto.
-
 \begin{tabular}{||c c||} 
     \hline
     Col1 & Col2 \\ [0.5ex] 
